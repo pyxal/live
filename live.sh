@@ -48,7 +48,7 @@ xfconf-query -n -c xfce4-panel -p "/plugins/plugin-11/display-tooltip-icon" -t b
 xfconf-query -n -c xfce4-panel -p "/plugins/plugin-11/group-policy" -t uint -s "0" &&
 
 ## clock config
-xfconf-query -n -c xfce4-panel -p "/plugins/plugin-12/digital-format" -t string -s "%H:%M - %d/%m/%Y" &&
+xfconf-query -n -c xfce4-panel -p "/plugins/plugin-12/digital-format" -t string -s "%d/%m/%y  %H:%M" &&
 
 ## restart xfce4 panel
 echo "Restarting XFCE4 panel..." &&
