@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# PEPPERMINT TEN LIVE SETUP SCRIPT V1.0
+# PEPPERMINT TEN LIVE SETUP SCRIPT V1.1
 #
 # Firewall setup
 # Environment config
@@ -49,6 +49,7 @@ xfconf-query -n -c xfce4-panel -p "/plugins/plugin-11/group-policy" -t uint -s "
 
 ## clock config
 xfconf-query -n -c xfce4-panel -p "/plugins/plugin-12/digital-format" -t string -s "%d/%m/%y  %H:%M" &&
+sudo timedatectl set-timezone Europe/Copenhagen &&
 
 ## restart xfce4 panel
 echo "Restarting XFCE4 panel..." &&
