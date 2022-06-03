@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# LINUX LIVE SETUP SCRIPT V1.2
+# LINUX LIVE SETUP SCRIPT V1.3
 #
 # Firewall setup
 # Environment config
@@ -70,7 +70,7 @@ case "$OS" in
 		echo "Restarting XFCE4 panel..." &&
 		xfce4-panel -r
 		;;
-
+ 
 	"Linux Mint")
 		echo "Cinnamon panel configuration..."
 		
@@ -96,6 +96,11 @@ case "$OS" in
 		;;
 esac
 
+
+# clean up
+if [ -d "./live/.git/" ]; then
+	rm -rf ./live
+fi;
 
 
 # clear
