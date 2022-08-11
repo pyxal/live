@@ -75,8 +75,7 @@ case "$OS" in
 		echo "Cinnamon panel configuration..."
 		
 		## set timezone
-		sudo timedatectl set-timezone Europe/Copenhagen &&
-		dconf write /org/cinnamon/
+		sudo timedatectl set-timezone Europe/Copenhagen
 		
 		## cinnamon dark theme
 		python3 -c "$CINNAMONDARKTHEME"
