@@ -99,15 +99,15 @@ esac
 
 # add oll script
 if [ -d "./live/.git/" ]; then
-	cp ./live/ollTrainer.py ~/.ollTrainer.py
+	cp ./live/ollTrainer.py /home/$USER/.ollTrainer.py
 else
-	cp /media/cdrom/other/ollTrainer.py ~/.ollTrainer.py
+	cp /media/cdrom/other/ollTrainer.py /home/$USER/.ollTrainer.py
 fi;
 
 
 # set aliases
-echo "alias oll='python3 ~/.ollTrainer.py'" >> ~/.bashrc &&
-source ~/.bashrc
+echo "alias oll='python3 /home/$USER/.ollTrainer.py'" >> /home/$USER/.bashrc &&
+. /home/$USER/.bashrc
 
 
 # clean up
