@@ -76,6 +76,7 @@ case "$OS" in
 		
 		## set timezone
 		sudo timedatectl set-timezone Europe/Copenhagen &&
+		dconf write /org/cinnamon/
 		
 		## cinnamon dark theme
 		python3 -c "$CINNAMONDARKTHEME"
@@ -95,6 +96,19 @@ case "$OS" in
 		cinnamon --replace > /dev/null 2>&1 & disown
 		;;
 esac
+
+
+# add oll script
+if [ -d "./live/.git/" ]; then
+	cp ./live/ollTrainer.py ~/.ollTrainer.py
+else
+	cp /media/cdrom/other/ollTrainer.py ~/.ollTrainer.py
+fi;
+
+
+# set aliases
+echo "alias oll='python3 ~/.ollTrainer.py'" >> ~/.bashrc &&
+source ~/.bashrc
 
 
 # clean up
