@@ -1,8 +1,9 @@
 #!/bin/sh
 
-# LINUX LIVE SETUP SCRIPT V1.3
+# LINUX LIVE SETUP SCRIPT V1.4
 #
 # Firewall setup
+# Disable Bluetooth
 # Environment config
 #
 
@@ -35,6 +36,11 @@ sudo ufw default allow outgoing &&
 sudo ufw reload &&
 sudo ufw status verbose
 
+
+# disable bluetooth
+echo "\nDisable bluetooth...\n"
+sudo systemctl disable --now bluetooth.service
+rfkill block bluetooth
 
 
 # environment setup
@@ -118,3 +124,4 @@ fi;
 
 # clear
 clear
+
